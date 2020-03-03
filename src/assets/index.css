@@ -1,0 +1,11 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+
+.bg-grey-transparent {
+  background-color: rgba(0,0,0,.5);
+}
