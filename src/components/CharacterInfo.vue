@@ -32,7 +32,27 @@ export default {
     typeCharacter() {
       return this.info.type ? this.info.type : 'Normal'
     }
+  },
+  watch: {
+    active (active) {
+      if(active) {
+        document.body.style.setProperty('overflow', 'hidden');
+      } else {
+        document.body.style.removeProperty('overflow');
+      }
+    }
+  },
+  created() {
+    this.escapeHandler = e => {
+      if(e.key === 'Escape') {
+        this.close();
+      }
+    }
+
+    document.addEventListener('keydown', this.escapeHandler);
+  },
+  destroyed() {
+    document.removeEventListener('keydown', this.escapeHandler);
   }
-  
 }
 </script>
